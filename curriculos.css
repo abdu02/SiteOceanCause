@@ -1,0 +1,212 @@
+
+/*Styles Globais*/
+*,
+*::before,
+*::after{
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+}
+html{
+	font-family: 'Nunito', sans-serif;
+	font-size: 10px;
+	box-sizing: border-box;
+}
+a{
+	text-decoration: none;	
+}
+ul{
+	list-style: none;
+}
+p{
+	font-size: 1.6rem;
+}
+img{
+	width: 100%;
+	max-width: 100%;
+	height: auto;
+}
+section{
+	padding: 5rem 0;
+}
+/* Style do Cabecilho*/
+header{
+	width: 100%;
+	height: 5rem;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1; /*funciona basicamente como camadas*/
+}
+.container{ /* container onde tudo esta localizado, texto, imagens etc*/
+	width: 100%;
+	max-width: 98rem;
+	margin: 0 auto;
+	padding: 0 1.5rem;
+}
+nav{ /*caracteristicas da barra de navegacao */
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 1rem 0;
+	border-bottom: 1px solid rgba(255,255,255,.2);
+}
+.nav-logo{ /* muda o tamanho do logo*/
+	width: 10rem;
+}
+.menu-icons i{ /*itens ou icons do menu*/
+	font-size: 3.5rem;
+	color: #fafafa;
+	cursor: pointer;
+}
+.close i{ /*cor do X do menu*/
+	color: #ABDFF1;
+}
+.nav-list{ /* estilo do menu que sai quando diminui o tamanho da tela*/
+	width: 25rem;
+	height: 100vh;
+	background-color: #EF6C33;
+	position: fixed;
+	top: 0;
+	right: -26rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	z-index: 1500;
+	transition: all 650ms ease-in-out;
+}
+.nav-list.active{/*quando o menu esta ativo ele aparece*/
+	right: 0;
+}
+.close{ /*localizacao do X no menu*/
+	position: absolute;
+	top: 1rem;
+	left: 1.5rem;
+}
+.nav-item{
+	margin: 1.5rem 0;
+}
+.nav-link{ /*estilo dos "links" ou paginas ex: Pagina inicial, the ocean cleanup etc*/
+	font-size: 1.6rem;
+	text-transform: uppercase;
+	color: rgba(0,0,0,.7);
+}
+.hero{ /*parte diretamente embaixo do header onde tem a img do checklist*/
+	width: 100%;
+	height: 80vh;
+	background: linear-gradient(135deg, rgba(53, 70, 73, .9) 0%, rgba(108, 122, 137,.6) 100%), url(https://image.freepik.com/free-vector/male-female-cv-resume-illustration-cartoon_53562-8807.jpg)center no-repeat;
+	background-size: cover;
+	position: relative;
+}
+.hero::before{/*onde esta localizado o wave embaixo da imagen do checklist*/
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: -3px;
+	width: 100%;
+	height: 4.7rem;
+	background: url(https://raw.githubusercontent.com/jlop007/outdoors-website/master/tours/images/wave-small.png)center no-repeat;
+	background-size: cover;
+}
+.footer{
+	padding: 2.5rem 0;
+	background-color: #EF6C33;
+	text-align: center;
+	color: rgba(0,0,0,0.7);
+}
+/*media query faz que o site seja interativo e mude de tamanho em relacao aos tamanhos das telas*/
+@media screen and (min-width: 350px){
+	.main-message{
+		transform: translateY(40%); 
+	}
+}
+@media screen and (min-width: 470px){
+	.hero::before{
+		height: 9.4rem;
+		background: url(https://raw.githubusercontent.com/jlop007/outdoors-website/master/tours/images/wave-medium.png ); 
+		background-size: cover;
+	}
+	.testimonials::before{
+		height: 9.4rem;
+		background: url(https://raw.githubusercontent.com/jlop007/outdoors-website/master/tours/images/wave-medium-reversed.png ); 
+		background-size: cover;
+	}
+}
+@media screen and (min-width: 700px){
+	header{
+		height: 8rem;
+	}
+	.nav-brand{
+		width: 3.5rem;
+	}
+	.nav-list{
+		width: initial;
+		height: initial;
+		background-color: transparent;
+		position: initial;
+		top: initial;
+		right: initial;
+		display: flex;
+		flex-direction: row;
+		transition: initial;
+	}
+	.menu-icons{
+		display: none;
+	}
+	.nav-item{
+		margin: 0 2.5rem; 
+	}
+	.nav-link,
+	.current{
+		color: #fafafa;
+		position: relative;
+		font-size: 1.3rem;
+	}
+	.nav-link::before,
+	.current::before{
+		content: "";
+		position: absolute;
+		left: 0;
+		bottom: -.5rem;
+		background-color: #EF6C33;
+		width: 100%;
+		height: 2px;
+		transform: scaleX(0);
+		transform-origin: left;
+		transition: transform 650ms;
+	}
+	.current::before{
+		transform: scaleX(1);
+	}
+	.nav-link:hover::before{
+		transform: scaleX(1);
+	}
+	.hero{
+		height: 60vh;
+	}
+	.main-message{
+		transform: translateY(70%);
+	}
+	.titulo-heading h1{
+		font-size: 2.5rem;
+	}
+}
+@media screen and (min-width: 950px){
+	.hero::before{
+		height: 22.7rem;
+		background: url(https://raw.githubusercontent.com/jlop007/outdoors-website/master/tours/images/wave-large.png ); 
+		background-size: cover;
+	}
+	.citacao::before{
+		height: 22.7rem;
+		background: url(https://raw.githubusercontent.com/jlop007/outdoors-website/master/tours/images/wave-large-reversed.png ); 
+		background-size: cover;
+	}
+}
+@media screen and (min-width: 1200px){
+	.hero{
+		height: 75vh;
+	}
+}

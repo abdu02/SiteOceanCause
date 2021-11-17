@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Sobre Nós</title>
+    <link rel="stylesheet" type="html/css" href="style.css">
+    <link rel="stylesheet" type="text/html" href="index.html">
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ocean Cause</title>
+    <!-- icons -->
+    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+    <!--Google Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Aldrich&display=swap" rel="stylesheet">
+    <!--Our own stylesheet-->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/html" href="formulario.thml">
+    <link rel="stylesheet" type="text/html" href="curricolos.html">
+    <link rel="stylesheet" type="html/css" href="sobrenos.html">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<style type="text/css"> 
+/*Styles Globais*/
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+html{
+    font-family: 'Nunito', sans-serif;
+    font-size: 10px;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;  
+}
+ul{
+    list-style: none;
+}
+p{
+    font-size: 1.6rem;
+}
+img{
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+section{
+    padding: 5rem 0;
+}
+/* Style do Cabecilho*/
+header{
+    width: 100%;
+    height: 5rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1; /*funciona basicamente como camadas*/
+}
+.container{ /* container onde tudo esta localizado, texto, imagens etc*/
+    width: 100%;
+    max-width: 98rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+nav{ /*caracteristicas da barra de navegacao */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255,255,255,.2);
+}
+.nav-logo{ /* muda o tamanho do logo*/
+    width: 5rem;
+}
+.menu-icons i{ /*itens ou icons do menu*/
+    font-size: 3.5rem;
+    color: #fafafa;
+    cursor: pointer;
+}
+.close i{ /*cor do X do menu*/
+    color: #ABDFF1;
+}
+.nav-list{ /* estilo do menu que sai quando diminui o tamanho da tela*/
+    width: 25rem;
+    height: 100vh;
+    background-color: #EF6C33;
+    position: fixed;
+    top: 0;
+    right: -26rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1500;
+    transition: all 650ms ease-in-out;
+}
+.nav-list.active{/*quando o menu esta ativo ele aparece*/
+    right: 0;
+}
+.close{ /*localizacao do X no menu*/
+    position: absolute;
+    top: 1rem;
+    left: 1.5rem;
+}
+.nav-item{
+    margin: 1.5rem 0;
+}
+.nav-link{ /*estilo dos "links" ou paginas ex: Pagina inicial, the ocean cleanup etc*/
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    color: rgba(0,0,0,.7);
+}
+.hero{ /*parte diretamente embaixo do header onde tem a img do oceano*/
+    width: 100%;
+    height: 80vh;
+    background: linear-gradient(135deg, rgba(53, 70, 73, .9) 0%, rgba(108, 122, 137,.6) 100%), url(https://cdn.domtotal.com/img/noticias/2019-10/1396967_423516.jpg)center no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.hero::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 100%;
+    height: 4.7rem;
+    background: url(https://raw.githubusercontent.com/jlop007/outdoors-website/master/tours/images/wave-small.png)center no-repeat;
+    background-size: cover;
+}
+/*Parceirias do ocean cause*/
+.partner-grid{
+    display: grid;
+    width: 100;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    grid-gap: 2.5rem;
+}
+.partner-grid-item{
+    height: 40rem;
+    padding: 5rem;
+    margin-bottom: 10px;
+    color: #fafafa;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1;
+}
+.partner-grid-item::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(12deg, rgba(53, 70, 73, .9) 0%, rgba(108, 122, 137,.6) 100%);
+    z-index: -1;
+}
+.ocean{
+    background: url(https://res-3.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_170,w_170,f_auto,b_white,q_auto:eco/v1411469749/gstqwtkgmqk1js7bgnjw.png) center no-repeat;
+}
+.oceana{
+    background: url(data:image/png;base64,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) center no-repeat;
+}
+.surf{
+    background: url(https://garotasdepropaganda.files.wordpress.com/2011/05/surfrider-logo.jpg?w=584) center no-repeat;
+
+}
+.partner-grid-item h1{
+    font-family: 'aldrich' sans-serif;
+    font-size: 1.7rem;
+    text-transform: uppercase;
+    margin: 2rem 0;
+}
+@media screen and (min-width: 350px){
+    .main-message{
+        transform: translateY(40%); 
+    }
+}
+@media screen and (min-width: 470px){
+    .hero::before{
+        height: 9.4rem;
+        background: url(https://raw.githubusercontent.com/jlop007/outdoors-website/master/tours/images/wave-medium.png ); 
+        background-size: cover;
+    }
+    .testimonials::before{
+        height: 9.4rem;
+        background: url(https://raw.githubusercontent.com/jlop007/outdoors-website/master/tours/images/wave-medium-reversed.png ); 
+        background-size: cover;
+    }
+}
+@media screen and (min-width: 700px){
+    header{
+        height: 8rem;
+    }
+    .nav-brand{
+        width: 3.5rem;
+    }
+    .nav-list{
+        width: initial;
+        height: initial;
+        background-color: transparent;
+        position: initial;
+        top: initial;
+        right: initial;
+        display: flex;
+        flex-direction: row;
+        transition: initial;
+    }
+    .menu-icons{
+        width: 30px;
+        display: none;
+    }
+    .nav-item{
+        margin: 0 2.5rem; 
+    }
+    .nav-link,
+    .current{
+        color: #fafafa;
+        position: relative;
+        font-size: 1.3rem;
+    }
+    .nav-link::before,
+    .current::before{
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -.5rem;
+        background-color: #EF6C33;
+        width: 100%;
+        height: 2px;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 650ms;
+    }
+    .current::before{
+        transform: scaleX(1);
+    }
+    .nav-link:hover::before{
+        transform: scaleX(1);
+    }
+    .nav-link:hover::after{
+        transform: scaleX(1);
+    }
+    .hero{
+        height: 60vh;
+    }
+    .main-message{
+        transform: translateY(70%);
+    }
+    .titulo-heading h1{
+        font-size: 2.5rem;
+    }
+}
+@media screen and (min-width: 950px){
+    .hero::before{
+        height: 22.7rem;
+        background: url(https://raw.githubusercontent.com/jlop007/outdoors-website/master/tours/images/wave-large.png ); 
+        background-size: cover;
+    }
+    .citacao::before{
+        height: 22.7rem;
+        background: url(https://raw.githubusercontent.com/jlop007/outdoors-website/master/tours/images/wave-large-reversed.png ); 
+        background-size: cover;
+    }
+}
+@media screen and (min-width: 1200px){
+    .hero{
+        height: 75vh;
+    }
+}
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+  padding: 2rem;
+  size: 2rem;
+  border-radius: 100%;
+  border: 3px solid #EF6C33; 
+  justify-content: space-between;
+}
+.fa-instagram {
+  background: #125688;
+  color: white;
+  padding: 2rem;
+  size: 2rem;
+  border-radius: 100%;
+  border: 3px solid #EF6C33;
+  justify-content: space-between; 
+}
+.fa-google {
+  background: #dd4b39;
+  color: white;
+  padding: 2rem;
+  size: 2rem;
+  border-radius: 100%;
+  border: 3px solid #EF6C33;
+  justify-content: space-between; 
+}
+</style>
+
+</head>
+<body>
+    <header>
+        <div class="container"></div>
+        <nav>
+            <div class="nav-logo">
+                <a href="index.html">
+                    <img src="https://www.pinclipart.com/picdir/big/78-788624_clipart-wave-seawater-ocean-energy-logo-png-transparent.png" alt="logo">
+                </a>
+            </div>
+
+            <div class="menu-icons open">
+                <i class="icon ion-md-menu"></i>
+            </div>
+            <ul class="nav-list">
+                <div class="menu-icons close">
+                    <i class="icon ion-md-close"></i>
+                </div>
+                <li class="nav-item">
+                    <a href="#" class="nav-link current" target="_blank">Página Inicial</a>
+                </li>
+                <li class="nav-item">
+                    <a href="sobrenos.html" class="nav-link" target="_blank">Sobre Nós</a>
+                </li>
+                <li class="nav-item">
+                    <a href="formulario.html" class="nav-link" target="_blank">Cadastre-se</a>
+                </li>
+                <li class="nav-item">
+                    <a href="curricolos.html" class="nav-link" target="_blank">Curriculos</a>
+                </li>
+
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="hero">
+            <div class="container">
+                <div class="main-message">
+                    <br><br><br><br><br>
+                    <h3>Sobre a Instituição</h3>
+                    <h1>História da Ocean cause</h1>
+                    <p>
+                        Fundada em 2020, a Ocean Cause é um instituição dedicada exclusivamente a tentar salvar a vida aquática de nosso planeta divulgando dados e informações sobre a situação da vida aquática com o objetivo de sensibilizar e cativar o maior número de pessoas possíveis a doarem ou até mesmo se voluntariarem para ajudar na causa.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="nossa-visao">
+            <div class="container">
+                <div class="titulo-heading">
+                    <br><br>
+                    <h1>Por Onde que atua a instituição</h1>
+                    <p>A instituição atua apenas pela internet, uma vez que seu único objetivo é divulgar a causa, além disso todo dinheiro arrecadado tem como destino outras instituições e ongs que atuam na parte prática, como a ‘’The Ocean Cleanup’’ que tem como objetivo reduzir o plástico do oceano.
+                    </p>
+                </div>
+                <br><br><br>
+                <div class="titulo-heading"><h1>Parcerias do ocean cause</h1></div>
+
+                <div class="partner-grid">
+                    <!--grid item #1 -->
+                    <div class="partner-grid-item ocean">
+                        <h1></h1>
+                    </div>
+                    <!--grid item #2 -->
+                    <div class="partner-grid-item oceana">
+                        <h1></h1>
+                    </div>
+                    <!--grid item #3 -->
+                    <div class="partner-grid-item surf">
+                        <h1></h1>
+                    </div>
+                </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <div class="titulo-heading">
+                    <h3>Segue Nosso Trabalho Nas Redes Socias!</h3><br><br>
+                    <h1>estamos a sua espera</h1>
+                        <p>
+                            <a href="https://www.instagram.com/ocean_cause/" class="fa fa-instagram" target="_blank"></a>
+                            <a href="https://mail.google.com/mail/u/1/#inbox" class="fa fa-google" target="_blank"></a>
+                            <a href="https://www.facebook.com/abd.yaz.589" class="fa fa-facebook" target="_blank"></a>
+                        </p>
+                    </div>
+                    <div class="facaparte-grid">
+                        <!-- first grid item-->
+                        <div class="facaparte-grid-item">
+                            <p style="font-size: 1.6rem; transform: lowercase;">
+                                1-APOIE AS ORGANIZAÇÕES QUE TRABALHAM PARA PROTEGER OS OCEANOS<br> 2-PROMOVA A MUDANÇA NO SEIO DA SUA COMUNIDADE
+                                <br>3-NÃO ADQUIRA BENS QUE EXPLORAM A VIDA MARINHA<br>4-CONSUMA MENOS PLÁSTICO
+                            </p>
+                        </div>
+                        <!-- second grid item-->
+                        <div class="facaparte-grid-item">
+                            <p>
+                                5-CUIDE DAS PRAIAS<br> 6-RESPEITE O MEIO AMBIENTE<br>7-REDUZA A SUA PEGADA ECOLÓGICA E O CONSUMO DE ENERGIA<br>8-NÃO JOGUE LIXO NO CHÃO
+                            </p>
+                        </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2019-2020 Vida Na água. All rights reserved</p>
+    </footer>
+    <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
+</body>
+</html>

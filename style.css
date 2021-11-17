@@ -1,0 +1,370 @@
+
+/*Styles Globais*/
+*,
+*::before,
+*::after{
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+}
+html{
+	font-family: 'Nunito', sans-serif;
+	font-size: 10px;
+	box-sizing: border-box;
+}
+a{
+	text-decoration: none;	
+}
+ul{
+	list-style: none;
+}
+p{
+	font-size: 1.6rem;
+}
+img{
+	width: 100%;
+	max-width: 100%;
+	height: auto;
+}
+section{
+	padding: 5rem 0;
+}
+/* Style do Cabecilho*/
+header{
+	width: 100%;
+	height: 5rem;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1; /*funciona basicamente como camadas*/
+}
+.container{ /* container onde tudo esta localizado, texto, imagens etc*/
+	width: 100%;
+	max-width: 98rem;
+	margin: 0 auto;
+	padding: 0 1.5rem;
+}
+nav{ /*caracteristicas da barra de navegacao */
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 1rem 0;
+	border-bottom: 1px solid rgba(255,255,255,.2);
+}
+.nav-logo{ /* muda o tamanho do logo*/
+	width: 5rem;
+	border-width: 10px;
+}
+.menu-icons i{ /*itens ou icons do menu*/
+	font-size: 4rem;
+	width: 20px;
+	color: #fafafa;
+	cursor: pointer;
+}
+.close i{ /*cor do X do menu*/
+	color: #ABDFF1;
+}
+.nav-list{ /* estilo do menu que sai quando diminui o tamanho da tela*/
+	width: 25rem;
+	height: 100vh;
+	background-color: #EF6C33;
+	position: fixed;
+	top: 0;
+	right: -26rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	z-index: 1500;
+	transition: all 650ms ease-in-out;
+}
+.nav-list.active{/*quando o menu esta ativo ele aparece*/
+	right: 0;
+}
+.close{ /*localizacao do X no menu*/
+	position: absolute;
+	top: 1rem;
+	left: 1.5rem;
+}
+.nav-item{
+	margin: 1.5rem 0;
+}
+.nav-link{ /*estilo dos "links" ou paginas ex: Pagina inicial, the ocean cleanup etc*/
+	font-size: 1.6rem;
+	text-transform: uppercase;
+	color: rgba(0,0,0,.7);
+}
+.hero{ /*parte diretamente embaixo do header onde tem a img do oceano*/
+	width: 100%;
+	height: 80vh;
+	background: linear-gradient(135deg, rgba(53, 70, 73, .9) 0%, rgba(108, 122, 137,.6) 100%), url(https://eskipaper.com/images/ocean-wallpaper-21.jpg)center no-repeat;
+	background-size: cover;
+	position: relative;
+}
+.hero::before{
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: -3px;
+	width: 100%;
+	height: 4.7rem;
+	background: url(https://raw.githubusercontent.com/jlop007/outdoors-website/master/tours/images/wave-small.png)center no-repeat;
+	background-size: cover;
+}
+.main-message{ /*Mensagem principal*/
+	width: 100%;
+	height: 3rem;
+	color: #fafafa;
+	text-transform: uppercase;
+	transform: translateY(20%);/*posicionamento do texto no eixo y*/
+	max-width: 50rem;
+}
+.main-mesage h3{
+	box-sizing: 1.6rem;	
+}
+.main-message h1{
+	font-family: 'aldrich', sans-serif;
+	font-size: 4rem;
+	margin: 1rem 0;
+}
+.main-message p{
+	text-transform: lowercase;
+}
+.btn{
+	background-color: #EF6C33;
+	border-radius: 2rem;
+	color: #fafafa;
+	display: inline-block;
+	margin-top: 2rem;
+	padding: 1rem 2.5rem;
+	text-transform: uppercase;
+	transition: background-color 650ms;
+}
+.btn:hover{
+	background-color: black;
+}
+/*A parte do nossa visao*/
+.nossa-visao{
+	padding: 0;
+}
+.titulo-heading{
+	text-align: center;
+	text-transform: uppercase;
+	margin-bottom: 10rem;
+	color: rgb(0,0,0,.7);
+}
+.titulo-heading h3{
+	font-size: 1.4rem;
+}
+.titulo-heading h1{
+	font-family: 'aldrich', sans-serif;
+	font-size: 2rem;
+	margin: .5rem 0 1rem;
+}
+.titulo-heading p{
+	text-transform: lowercase;
+}
+/*importancia dos oceanos*/
+.activities-grid{
+	display: grid;
+	width: 100;
+	grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+	grid-gap: 2.5rem;
+}
+.activities-grid-item{
+	height: 40rem;
+	padding: 5rem;
+	margin-bottom: 10px;
+	color: #fafafa;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	cursor: pointer;
+	z-index: 1;
+}
+.activities-grid-item::before{
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(135deg, rgba(53, 70, 73, .9) 0%, rgba(108, 122, 137,.6) 100%);
+	z-index: -1;
+}
+.Turismo{
+	background: url(https://s.aolcdn.com/dims-shared/dims3/GLOB/crop/2121x1410+0+1/resize/640x426!/format/jpg/quality/85/https://s.aolcdn.com/hss/storage/midas/53ae97f0734dec9170ee4a6e364b4d4d/204020389/453076401.jpg) center no-repeat;
+
+}
+.Alimentação{
+	background: url(https://jacksonhole-traveler-production.s3.amazonaws.com/wp-content/uploads/2014/07/jacksonhole-flyfishing-640x426.jpg) center no-repeat;
+}
+.Pulmão{
+	background: url(https://y8m8k3m5.stackpathcdn.com/wp-content/uploads/2017/12/fish_school01_l-640x426.jpg) center no-repeat;
+
+}
+.activities-grid-item h1{
+	font-family: 'aldrich' sans-serif;
+	font-size: 1.7rem;
+	text-transform: uppercase;
+	margin: 2rem 0;
+}
+.citacao{
+	opacity: 1;
+	width: 100%;
+	height: 80vh;
+	background: linear-gradient(135deg, rgba(53, 70, 73, .9)  0%, rgba(108, 122, 137,.6) 100%), url(https://eskipaper.com/images/ocean-wallpaper-21.jpg)center no-repeat fixed;
+	background-size: cover;
+	position: relative;
+}
+.citacao::before{
+	content: "";
+	position: absolute;
+	top: 0;
+	bottom: -3rem;
+	width: 100%;
+	height: 4.7rem;
+	background: url(https://raw.githubusercontent.com/jlop007/outdoors-website/master/tours/images/wave-small-reversed.png )center no-repeat;
+	background-size: cover;
+}
+.citar{
+	width: 100%;
+	color: #fafafa;
+	position: absolute;
+	top: 55%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+}
+.citar-text-box{
+	padding: 0 1.5rem;
+	margin-bottom: 2rem;
+	position: relative;
+}
+.citar-text-box i{
+	position: absolute;
+	top: -8rem; 
+	left: 50%;
+	transform: translateX(-50%);
+	font-size: 8rem;
+	color: #EF6C33;
+	opacity: .5;
+	z-index: -1;
+}
+.citar-quote img{
+	width: 10rem;
+	height: 10rem;
+	border-radius: 100%;
+	border: 3px solid #EF6C33;
+}
+.facaparte-grid{
+	display: grid;
+	grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
+	grid-gap: 2.5rem;
+	margin-bottom: 2rem;
+}
+.facaparte-grid-item p{
+	color: rgb(0,0,0,.7);
+}
+.footer{
+	padding: 2.5rem 0;
+	background-color: #EF6C33;
+	text-align: center;
+	color: rgba(0,0,0,0.7);
+}
+/*media query faz que o site seja interativo e mude de tamanho em relacao aos tamanhos das telas*/
+@media screen and (min-width: 350px){
+	.main-message{
+		transform: translateY(40%); 
+	}
+}
+@media screen and (min-width: 470px){
+	.hero::before{
+		height: 9.4rem;
+		background: url(https://raw.githubusercontent.com/jlop007/outdoors-website/master/tours/images/wave-medium.png ); 
+		background-size: cover;
+	}
+	.testimonials::before{
+		height: 9.4rem;
+		background: url(https://raw.githubusercontent.com/jlop007/outdoors-website/master/tours/images/wave-medium-reversed.png ); 
+		background-size: cover;
+	}
+}
+@media screen and (min-width: 700px){
+	header{
+		height: 8rem;
+	}
+	.nav-brand{
+		width: 3.5rem;
+	}
+	.nav-list{
+		width: initial;
+		height: initial;
+		background-color: transparent;
+		position: initial;
+		top: initial;
+		right: initial;
+		display: flex;
+		flex-direction: row;
+		transition: initial;
+	}
+	.menu-icons{
+		display: none;
+	}
+	.nav-item{
+		margin: 0 2.5rem; 
+	}
+	.nav-link,
+	.current{
+		color: #fafafa;
+		position: relative;
+		font-size: 1.3rem;
+	}
+	.nav-link::before,
+	.current::before{
+		content: "";
+		position: absolute;
+		left: 0;
+		bottom: -.5rem;
+		background-color: #EF6C33;
+		width: 100%;
+		height: 2px;
+		transform: scaleX(0);
+		transform-origin: left;
+		transition: transform 650ms;
+	}
+	.current::before{
+		transform: scaleX(1);
+	}
+	.nav-link:hover::before{
+		transform: scaleX(1);
+	}
+	.hero{
+		height: 60vh;
+	}
+	.main-message{
+		transform: translateY(70%);
+	}
+	.titulo-heading h1{
+		font-size: 2.5rem;
+	}
+}
+@media screen and (min-width: 950px){
+	.hero::before{
+		height: 22.7rem;
+		background: url(https://raw.githubusercontent.com/jlop007/outdoors-website/master/tours/images/wave-large.png ); 
+		background-size: cover;
+	}
+	.citacao::before{
+		height: 22.7rem;
+		background: url(https://raw.githubusercontent.com/jlop007/outdoors-website/master/tours/images/wave-large-reversed.png ); 
+		background-size: cover;
+	}
+}
+@media screen and (min-width: 1200px){
+	.hero{
+		height: 75vh;
+	}
+}
